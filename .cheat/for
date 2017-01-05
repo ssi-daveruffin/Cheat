@@ -20,4 +20,11 @@ done
 for i in $(cat dummyfile.txt); do echo "Hello $i, my name is Joe"; done
 
 # for loop containing command
-for i in $(cat servers.txt); do printf "$i");ssh $i uptime; done
+for i in $(cat servers.txt); do printf ("$i");ssh $i uptime; done
+
+# for loop containing sudo
+for i in sean kennedy eddie christina, do sudo -u user useradd $1; done
+
+# for loop containing subshell
+for i in $(cat box.txt); do vagrant ssh $i -c 'sudo yum update -y && sudo yum upgrade -y'; done
+
